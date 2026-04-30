@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Instrument_Serif, Raleway } from "next/font/google";
+import { Geist_Mono, Instrument_Serif, Raleway, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -33,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${raleway.variable} ${instrumentSerif.variable} h-full antialiased raleway`}
+      className={cn("h-full", "antialiased", "raleway", geistMono.variable, raleway.variable, instrumentSerif.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-screen bg-background text-foreground font-sans">
         <main className="flex min-h-screen flex-col">
