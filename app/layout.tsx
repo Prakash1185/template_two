@@ -3,6 +3,7 @@ import { Geist_Mono, Instrument_Serif, Raleway, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col">
           <Navbar />
           {children}
+          <Footer/>
         </main>
       </body>
     </html>
