@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Raleway } from "next/font/google";
+import { Geist_Mono, Instrument_Serif, Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
@@ -12,6 +12,12 @@ const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistMono.variable} ${raleway.variable} h-full antialiased raleway`}
+      className={`${geistMono.variable} ${raleway.variable} ${instrumentSerif.variable} h-full antialiased raleway`}
     >
       <body className="min-h-screen bg-background text-foreground font-sans">
         <main className="flex min-h-screen flex-col">

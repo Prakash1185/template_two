@@ -1,4 +1,8 @@
+import HeroSection from "@/components/hero";
+
 export default function Home() {
-  return <div>HEllo this is new app</div>;
+  return (
+    <HeroSection/>
+  );
 }
 ;
