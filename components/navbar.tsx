@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <header className="fixed top-0 left-0 w-full z-50  backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full z-50  backdrop-blur-md md:backdrop-blur-none md:bg-[#f7fbf9]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* LEFT SIDE (Logo + Links) */}
           <div className="flex items-center gap-10">
