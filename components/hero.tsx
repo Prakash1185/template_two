@@ -93,7 +93,7 @@ const HeroSection = () => {
           </div>
         </Stagger>
 
-        {/* RIGHT IMAGE (desktop only) */}
+        {/* RIGHT IMAGE */}
         <motion.div
           initial={{
             opacity: 0,
@@ -105,7 +105,7 @@ const HeroSection = () => {
           }}
           transition={{
             duration: 1.4,
-            ease: [0.16, 1, 0.3, 1],
+            ease: [0.22, 1, 0.36, 1],
             delay: 0.2,
           }}
           className="hidden lg:flex flex-[0.8] justify-end relative"

@@ -8,16 +8,16 @@ export const RevealUp = ({ children }: { children: React.ReactNode }) => {
       variants={{
         hidden: {
           opacity: 0,
-          clipPath: "inset(100% 0% 0% 0%)",
-          filter: "blur(3px)",
+          y: 12,
+          filter: "blur(5px)",
         },
         show: {
           opacity: 1,
-          clipPath: "inset(0% 0% 0% 0%)",
+          y: 0,
           filter: "blur(0px)",
           transition: {
-            duration: 1.2,
-            ease: [0.16, 1, 0.3, 1],
+            duration: 1.1,
+            ease: [0.22, 1, 0.36, 1],
           },
         },
       }}
