@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Instrument_Serif, Raleway, Geist } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 import Navbar from "@/components/navbar";
+import LenisProvider from "@/components/lenis-provider";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
 
@@ -40,11 +42,13 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", "raleway", geistMono.variable, raleway.variable, instrumentSerif.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-screen bg-background text-foreground font-sans">
-        <main className="flex min-h-screen flex-col">
-          <Navbar />
-          {children}
-          <Footer/>
-        </main>
+        <LenisProvider>
+          <main className="flex min-h-screen flex-col">
+            <Navbar />
+            {children}
+            <Footer />
+          </main>
+        </LenisProvider>
       </body>
     </html>
   );

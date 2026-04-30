@@ -1,25 +1,70 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+/* ---------- SIMPLE FADE VARIANT ---------- */
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+    filter: "blur(4px)",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 const PricingSection = () => {
   return (
     <section className="py-28 bg-[var(--background)]">
-      <div className="max-w-[1250px] mx-auto px-6 text-center">
+      <motion.div
+        className="max-w-[1250px] mx-auto px-6 text-center"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          show: {
+            transition: {
+              staggerChildren: 0.18, // 🔥 global stagger
+            },
+          },
+        }}
+      >
         {/* HEADER */}
-        <p className="text-sm text-[var(--primary)] font-medium tracking-wide mb-4">
+        <motion.p
+          variants={fadeUp}
+          className="text-sm text-[var(--primary)] font-medium tracking-wide mb-4"
+        >
           OUR IMPACT
-        </p>
+        </motion.p>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[var(--foreground)] leading-tight max-w-2xl mx-auto">
+        <motion.h2
+          variants={fadeUp}
+          className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[var(--foreground)] leading-tight max-w-2xl mx-auto"
+        >
           Empowering teams to scale smarter and faster
-        </h2>
+        </motion.h2>
 
-        <p className="mt-4 text-[var(--muted)] max-w-xl mx-auto text-sm sm:text-base">
+        <motion.p
+          variants={fadeUp}
+          className="mt-4 text-[var(--muted)] max-w-xl mx-auto text-sm sm:text-base"
+        >
           Businesses of all sizes use our platform to improve financial
           visibility, optimize workflows, and unlock sustainable growth.
-        </p>
+        </motion.p>
 
         {/* STATS */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+        <motion.div
+          variants={fadeUp}
+          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
+        >
           <div className="flex flex-col items-center">
             <h3 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-[var(--foreground)] tracking-tight">
               28%
@@ -46,22 +91,27 @@ const PricingSection = () => {
               Countries supported
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* PLAN LABEL */}
-        <p className="mt-16 mb-10 text-sm text-[var(--muted)] tracking-wide">
+        <motion.p
+          variants={fadeUp}
+          className="mt-16 mb-10 text-sm text-[var(--muted)] tracking-wide"
+        >
           SELECT PLAN
-        </p>
+        </motion.p>
 
         {/* PRICING CARDS */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div
+          variants={fadeUp}
+          className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {/* CARD 1 */}
           <div
             className="rounded-2xl p-8 text-left
             bg-gradient-to-br from-white to-[#f3f6f5]
             border border-[var(--border)]
-            shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)]
-          "
+            shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)]"
           >
             <h3 className="text-xl font-semibold text-[var(--foreground)]">
               Starter
@@ -82,14 +132,12 @@ const PricingSection = () => {
             </ul>
           </div>
 
-          {/* CARD 2 (HIGHLIGHT) */}
+          {/* CARD 2 */}
           <div
             className="relative rounded-2xl p-8 text-left text-white overflow-hidden
             bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)]
-            shadow-[0_15px_40px_-15px_rgba(0,0,0,0.4)]
-          "
+            shadow-[0_15px_40px_-15px_rgba(0,0,0,0.4)]"
           >
-            {/* subtle overlay */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent)]" />
 
             <h3 className="text-xl font-semibold relative z-10">Premium</h3>
@@ -108,8 +156,8 @@ const PricingSection = () => {
               <li>Priority support</li>
             </ul>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
