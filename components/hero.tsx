@@ -16,13 +16,11 @@ const HeroSection = () => {
             <span className="inline-block instrument">and</span> grow your{" "}
             <span className="inline-block instrument">business</span> faster.
           </h1>
-
           {/* SUBTEXT */}
           <p className="mt-6 text-[var(--muted)] text-base sm:text-lg max-w-[520px] mx-auto lg:mx-0">
             Built for modern teams to streamline payments, track cash flow, and
             simplify financial workflows — all in one place.
           </p>
-
           {/* INPUT + BUTTON */}
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-3 max-w-[500px] mx-auto lg:mx-0">
             <input
@@ -35,10 +33,30 @@ const HeroSection = () => {
           </div>
 
           {/* LOGOS */}
-          <div className="mt-10 flex flex-wrap justify-center lg:justify-start items-center gap-6 text-[var(--muted)] text-sm font-medium">
-            <span>Stripe</span>
-            <span>Razorpay</span>
-            <span>Notion</span>
+          <div className=" flex flex-wrap justify-center lg:justify-start items-center gap-8 opacity-80">
+            <Image
+              src="/stripe.png"
+              alt="Stripe"
+              width={120}
+              height={30}
+              className="object-contain grayscale hover:grayscale-0 transition duration-300"
+            />
+
+            <Image
+              src="/razorpay.webp"
+              alt="Razorpay"
+              width={120}
+              height={30}
+              className="object-contain grayscale hover:grayscale-0 transition duration-300"
+            />
+
+            <Image
+              src="/starpi.png"
+              alt="Starpi"
+              width={120}
+              height={30}
+              className="object-contain grayscale hover:grayscale-0 transition duration-300"
+            />
           </div>
         </div>
 
