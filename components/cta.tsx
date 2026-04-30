@@ -16,7 +16,7 @@ const container = {
     filter: "blur(0px)",
     transition: {
       duration: 1.2,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1]  as const,
     },
   },
 };
@@ -33,7 +33,7 @@ const fadeUp = {
     filter: "blur(0px)",
     transition: {
       duration: 1,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1]  as const,
     },
   },
 };
