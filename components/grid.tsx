@@ -1,12 +1,52 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { ArrowLeftRight } from "lucide-react";
 import AirplaneIcon from "./ui/airplane-icon";
 import WorldIcon from "./ui/world-icon";
 
+/* ---------- ANIMATION VARIANTS ---------- */
+
+const cardContainer = {
+  hidden: {
+    opacity: 0,
+    scale: 0.96,
+    filter: "blur(6px)",
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const innerReveal = {
+  hidden: {
+    opacity: 0,
+    y: 12,
+    filter: "blur(4px)",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
 const Grid = () => {
   return (
-    <section data-section-snap="true" className="min-h-screen py-24 bg-[var(--background)] flex items-center">
+    <section
+      data-section-snap="true"
+      className="min-h-screen py-24 bg-[var(--background)] flex items-center"
+    >
       <div className="max-w-[1250px] mx-auto px-6">
         {/* HEADER */}
         <div className="text-center mb-16">
@@ -20,81 +60,130 @@ const Grid = () => {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{
+            show: {
+              transition: {
+                staggerChildren: 0.25,
+              },
+            },
+          }}
+        >
           {/* CARD 1 */}
-          <div
-            className="
-            rounded-2xl p-8
+          <motion.div
+            variants={cardContainer}
+            className="rounded-2xl p-8
             bg-[linear-gradient(180deg,#ffffff_0%,#f7faf9_100%)]
             border border-[var(--border)]
-            shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_25px_-12px_rgba(0,0,0,0.15)]
-          "
+            shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_25px_-12px_rgba(0,0,0,0.15)]"
           >
-            <h3 className="text-[52px] sm:text-[60px] font-semibold text-[var(--primary)]">
-              5k+
-            </h3>
+            <motion.div
+              variants={{
+                show: {
+                  transition: {
+                    staggerChildren: 0.12,
+                    delayChildren: 0.25,
+                  },
+                },
+              }}
+            >
+              <motion.h3
+                variants={innerReveal}
+                className="text-[52px] sm:text-[60px] font-semibold text-[var(--primary)]"
+              >
+                5k+
+              </motion.h3>
 
-            <p className="mt-4 text-lg text-[var(--foreground)] max-w-xs">
-              Teams actively managing their finances with our platform
-            </p>
-          </div>
+              <motion.p
+                variants={innerReveal}
+                className="mt-4 text-lg text-[var(--foreground)] max-w-xs"
+              >
+                Teams actively managing their finances with our platform
+              </motion.p>
+            </motion.div>
+          </motion.div>
 
           {/* CARD 2 */}
-          <div
-            className="
-            rounded-2xl p-8
+          <motion.div
+            variants={cardContainer}
+            className="rounded-2xl p-8
             bg-[linear-gradient(180deg,#ffffff_0%,#f7faf9_100%)]
             border border-[var(--border)]
-            shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_25px_-12px_rgba(0,0,0,0.15)]
-          "
+            shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_25px_-12px_rgba(0,0,0,0.15)]"
           >
-            <h3 className="text-xl sm:text-2xl font-semibold text-[var(--foreground)] max-w-md">
-              Access your funds instantly whenever you need them
-            </h3>
-
-            <div className="mt-8 flex items-center gap-6">
-              {/* LEFT ICON */}
-              <div
-                className="
-                size-14 rounded-xl flex items-center justify-center text-white
-                bg-[var(--primary)]
-                shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_8px_20px_-10px_rgba(0,0,0,0.3)]
-              "
+            <motion.div
+              variants={{
+                show: {
+                  transition: {
+                    staggerChildren: 0.12,
+                    delayChildren: 0.25,
+                  },
+                },
+              }}
+            >
+              <motion.h3
+                variants={innerReveal}
+                className="text-xl sm:text-2xl font-semibold text-[var(--foreground)] max-w-md"
               >
-                <AirplaneIcon
-                  airPlaneDuration={1}
-                  windDuration={1}
-                  exitDuration={2}
-                />
-              </div>
+                Access your funds instantly whenever you need them
+              </motion.h3>
 
-              <ArrowLeftRight className="text-[var(--muted)]" />
-
-              {/* RIGHT ICON */}
-              <div
-                className="
-                size-14 rounded-xl flex items-center justify-center text-white
-                bg-[var(--foreground)]
-                shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_8px_20px_-10px_rgba(0,0,0,0.35)]
-              "
+              <motion.div
+                variants={innerReveal}
+                className="mt-8 flex items-center gap-6"
               >
-                <WorldIcon />
-              </div>
-            </div>
-          </div>
+                {/* LEFT ICON */}
+                <div
+                  className="size-14 rounded-xl flex items-center justify-center text-white
+                  bg-[var(--primary)]
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_8px_20px_-10px_rgba(0,0,0,0.3)]"
+                >
+                  <AirplaneIcon
+                    airPlaneDuration={1}
+                    windDuration={1}
+                    exitDuration={2}
+                  />
+                </div>
+
+                <ArrowLeftRight className="text-[var(--muted)]" />
+
+                {/* RIGHT ICON */}
+                <div
+                  className="size-14 rounded-xl flex items-center justify-center text-white
+                  bg-[var(--foreground)]
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_8px_20px_-10px_rgba(0,0,0,0.35)]"
+                >
+                  <WorldIcon />
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
           {/* CARD 3 */}
-          <div
-            className="
-            lg:col-span-2 rounded-2xl p-8
+          <motion.div
+            variants={cardContainer}
+            className="lg:col-span-2 rounded-2xl p-8
             bg-[linear-gradient(180deg,#ffffff_0%,#f7faf9_100%)]
             border border-[var(--border)]
-            shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_12px_30px_-15px_rgba(0,0,0,0.2)]
-          "
+            shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_12px_30px_-15px_rgba(0,0,0,0.2)]"
           >
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+            <motion.div
+              variants={{
+                show: {
+                  transition: {
+                    staggerChildren: 0.12,
+                    delayChildren: 0.25,
+                  },
+                },
+              }}
+              className="flex flex-col lg:flex-row items-center justify-between gap-10"
+            >
               {/* TEXT */}
-              <div className="max-w-sm">
+              <motion.div variants={innerReveal} className="max-w-sm">
                 <h3 className="text-xl sm:text-2xl font-semibold text-[var(--foreground)]">
                   Stable growth, zero surprises
                 </h3>
@@ -103,35 +192,30 @@ const Grid = () => {
                   Monitor your financial performance with predictable trends and
                   real-time insights — no unexpected fluctuations.
                 </p>
-              </div>
+              </motion.div>
 
               {/* GRAPH */}
-              <div
-                className="
-                w-full lg:w-[420px] h-[220px] rounded-xl p-4
+              <motion.div
+                variants={innerReveal}
+                className="w-full lg:w-[420px] h-[220px] rounded-xl p-4
                 bg-white border border-[var(--border)]
-                shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_25px_-12px_rgba(0,0,0,0.2)]
-              "
+                shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_25px_-12px_rgba(0,0,0,0.2)]"
               >
                 <div className="relative h-full">
-                  {/* HEADER */}
                   <div className="absolute top-0 left-0 w-full flex justify-between text-sm text-[var(--muted)]">
                     <span>Summary</span>
                     <span>6 Months</span>
                   </div>
 
-                  {/* VALUE */}
                   <div className="absolute top-6 left-0 text-xl font-semibold text-[var(--foreground)]">
                     $1,876,580
                   </div>
 
-                  {/* SVG CHART */}
                   <svg
                     className="absolute bottom-0 left-0 w-full h-[75%]"
                     viewBox="0 0 100 100"
                     preserveAspectRatio="none"
                   >
-                    {/* GRADIENT */}
                     <defs>
                       <linearGradient
                         id="areaGradient"
@@ -153,13 +237,11 @@ const Grid = () => {
                       </linearGradient>
                     </defs>
 
-                    {/* AREA */}
                     <path
                       d="M0,80 C15,70 25,65 35,60 C45,55 55,50 65,48 C75,45 85,35 100,30 L100,100 L0,100 Z"
                       fill="url(#areaGradient)"
                     />
 
-                    {/* LINE */}
                     <path
                       d="M0,80 C15,70 25,65 35,60 C45,55 55,50 65,48 C75,45 85,35 100,30"
                       fill="none"
@@ -169,10 +251,10 @@ const Grid = () => {
                     />
                   </svg>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
