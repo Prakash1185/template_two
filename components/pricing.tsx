@@ -4,7 +4,6 @@ const PricingSection = () => {
   return (
     <section className="py-28 bg-[var(--background)]">
       <div className="max-w-[1250px] mx-auto px-6 text-center">
-
         {/* HEADER */}
         <p className="text-sm text-[var(--primary)] font-medium tracking-wide mb-4">
           OUR IMPACT
@@ -20,57 +19,60 @@ const PricingSection = () => {
         </p>
 
         {/* STATS */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-10">
-
-          <div>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[var(--foreground)]">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+          <div className="flex flex-col items-center">
+            <h3 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-[var(--foreground)] tracking-tight">
               28%
             </h3>
-            <p className="mt-2 text-sm text-[var(--muted)]">
+            <p className="mt-2 text-sm sm:text-base text-[var(--muted)]">
               Increase in efficiency
             </p>
           </div>
 
-          <div>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[var(--foreground)]">
+          <div className="flex flex-col items-center">
+            <h3 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-[var(--foreground)] tracking-tight">
               150K
             </h3>
-            <p className="mt-2 text-sm text-[var(--muted)]">
+            <p className="mt-2 text-sm sm:text-base text-[var(--muted)]">
               Transactions processed monthly
             </p>
           </div>
 
-          <div>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[var(--foreground)]">
+          <div className="flex flex-col items-center">
+            <h3 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-[var(--foreground)] tracking-tight">
               12+
             </h3>
-            <p className="mt-2 text-sm text-[var(--muted)]">
+            <p className="mt-2 text-sm sm:text-base text-[var(--muted)]">
               Countries supported
             </p>
           </div>
-
         </div>
 
         {/* PLAN LABEL */}
-        <p className="mt-16 text-sm text-[var(--muted)] tracking-wide">
+        <p className="mt-16 mb-10 text-sm text-[var(--muted)] tracking-wide">
           SELECT PLAN
         </p>
 
         {/* PRICING CARDS */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-
           {/* CARD 1 */}
-          <div className="rounded-2xl p-8 text-left
+          <div
+            className="rounded-2xl p-8 text-left
             bg-gradient-to-br from-white to-[#f3f6f5]
             border border-[var(--border)]
             shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)]
-          ">
+          "
+          >
             <h3 className="text-xl font-semibold text-[var(--foreground)]">
               Starter
             </h3>
 
             <p className="mt-6 text-2xl font-semibold text-[var(--foreground)]">
-              ₹199<span className="text-base font-normal text-[var(--muted)]"> /month</span>
+              ₹199
+              <span className="text-base font-normal text-[var(--muted)]">
+                {" "}
+                /month
+              </span>
             </p>
 
             <ul className="mt-6 space-y-2 text-sm text-[var(--muted)]">
@@ -81,19 +83,23 @@ const PricingSection = () => {
           </div>
 
           {/* CARD 2 (HIGHLIGHT) */}
-          <div className="relative rounded-2xl p-8 text-left text-white overflow-hidden
+          <div
+            className="relative rounded-2xl p-8 text-left text-white overflow-hidden
             bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)]
             shadow-[0_15px_40px_-15px_rgba(0,0,0,0.4)]
-          ">
+          "
+          >
             {/* subtle overlay */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent)]" />
 
-            <h3 className="text-xl font-semibold relative z-10">
-              Premium
-            </h3>
+            <h3 className="text-xl font-semibold relative z-10">Premium</h3>
 
             <p className="mt-6 text-2xl font-semibold relative z-10">
-              ₹499<span className="text-base font-normal text-white/80"> /month</span>
+              ₹499
+              <span className="text-base font-normal text-white/80">
+                {" "}
+                /month
+              </span>
             </p>
 
             <ul className="mt-6 space-y-2 text-sm text-white/80 relative z-10">
@@ -102,9 +108,7 @@ const PricingSection = () => {
               <li>Priority support</li>
             </ul>
           </div>
-
         </div>
-
       </div>
     </section>
   );

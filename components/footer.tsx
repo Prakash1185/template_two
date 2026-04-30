@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { Twitter, Linkedin, Facebook } from "lucide-react";
+import TwitterXIcon from "./ui/twitter-x-icon";
+import LinkedinIcon from "./ui/linkedin-icon";
+import FacebookIcon from "./ui/facebook-icon";
 
 const Footer = () => {
   return (
@@ -11,7 +14,13 @@ const Footer = () => {
           {/* LOGO */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 font-semibold text-lg">
-              <Image src="/logo.png" alt="logo" width={28} height={28} />
+              <Image
+                src="/logo.png"
+                alt="logo"
+                width={35}
+                height={35}
+                className="rounded-md"
+              />
               Finteck
             </div>
           </div>
@@ -55,22 +64,14 @@ const Footer = () => {
         {/* SOCIAL + COPYRIGHT */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-[var(--border)] pt-6">
           <p className="text-sm text-[var(--muted)]">
-            © {new Date().getFullYear()} Finteck. All rights reserved.
+            © {new Date().getFullYear()} Finteck. All rights reserved. | For
+            learning purpose only
           </p>
 
           <div className="flex items-center gap-4 text-[var(--muted)]">
-            <Twitter
-              size={18}
-              className="hover:text-[var(--foreground)] cursor-pointer"
-            />
-            <Linkedin
-              size={18}
-              className="hover:text-[var(--foreground)] cursor-pointer"
-            />
-            <Facebook
-              size={18}
-              className="hover:text-[var(--foreground)] cursor-pointer"
-            />
+            <TwitterXIcon />
+            <LinkedinIcon />
+            <FacebookIcon />
           </div>
         </div>
       </div>
