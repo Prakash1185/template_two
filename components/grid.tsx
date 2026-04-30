@@ -6,7 +6,7 @@ import WorldIcon from "./ui/world-icon";
 
 const Grid = () => {
   return (
-    <section className="py-24 bg-[var(--background)]">
+    <section data-section-snap="true" className="min-h-screen py-24 bg-[var(--background)] flex items-center">
       <div className="max-w-[1250px] mx-auto px-6">
         {/* HEADER */}
         <div className="text-center mb-16">
