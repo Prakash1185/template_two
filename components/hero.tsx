@@ -5,11 +5,10 @@ import { motion } from "framer-motion";
 import { PrimaryButton } from "./buttons";
 import { Stagger } from "./animations/stagger";
 import { RevealUp } from "./animations/revealup";
-import { LineReveal } from "./animations/linereveal";
 
 const HeroSection = () => {
   return (
-    <section className="pt-32 pb-24 bg-[var(--background)]">
+    <section className="pt-36 pb-24 bg-[var(--background)]">
       <div className="max-w-[1250px] mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
         {/* LEFT CONTENT */}
         <Stagger>
@@ -17,22 +16,12 @@ const HeroSection = () => {
             {/* HEADING */}
             <RevealUp>
               <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold leading-[1.15] text-[var(--foreground)]">
-                <LineReveal>
-                  <span className="block">
-                    Manage your{" "}
-                    <span className="inline-block instrument">finances</span>{" "}
-                    smarter
-                  </span>
-                </LineReveal>
-
-                <LineReveal>
-                  <span className="block">
-                    <span className="inline-block instrument">and</span> grow
-                    your{" "}
-                    <span className="inline-block instrument">business</span>{" "}
-                    faster.
-                  </span>
-                </LineReveal>
+                Manage your{" "}
+                <span className="inline-block instrument">finances</span>{" "}
+                smarter <span className="inline-block instrument">and</span>{" "}
+                grow your{" "}
+                <span className="inline-block instrument">business</span>{" "}
+                faster.
               </h1>
             </RevealUp>
 
