@@ -1,14 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-sans: var(--font-geist-sans);
+  --background: #f7fbf9;
+  --foreground: #0f1f1c;
+
+  --primary: #10b981;        /* emerald */
+  --primary-dark: #059669;
+
+  --muted: #6b7280;
+  --border: #e6f0ec;
+  --card: #ffffff;
+
+  --font-sans: var(--font-raleway);
   --font-mono: var(--font-geist-mono);
-  --font-raleway: var(--font-raleway);
 }
 
-
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
 .raleway {
   font-family: "Raleway", sans-serif;
+}
+.instrument {
+  font-family: "Instrument Serif", sans-serif;
 }
