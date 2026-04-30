@@ -20,7 +20,7 @@ const leftToRight = {
     filter: "blur(0px)",
     transition: {
       duration: 0.9,
-      ease: [0.16, 1, 0.3, 1],
+      ease: [0.16, 1, 0.3, 1]  as const,
     },
   },
 };
@@ -37,7 +37,7 @@ const fadeUp = {
     filter: "blur(0px)",
     transition: {
       duration: 0.9,
-      ease: [0.16, 1, 0.3, 1],
+      ease: [0.16, 1, 0.3, 1]  as const,
     },
   },
 };

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Twitter, Linkedin, Facebook } from "lucide-react";
 import TwitterXIcon from "./ui/twitter-x-icon";
 import LinkedinIcon from "./ui/linkedin-icon";
 import FacebookIcon from "./ui/facebook-icon";
